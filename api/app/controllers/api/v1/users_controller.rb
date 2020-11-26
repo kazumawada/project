@@ -10,7 +10,7 @@ module Api
        #特定のユーザーを表示する
        def show
         @user = User.find(params[:id]) 
-
+        @posts = @user.posts.paginate(page: params[:page])
        end
 
        # ユーザーを新規作成するページ
