@@ -11,11 +11,14 @@ module Api
        def show
         @user = User.find(params[:id]) 
         @posts = @user.posts.paginate(page: params[:page])
+        render json: @user
+        render json: @posts
        end
 
        # ユーザーを新規作成するページ
        def new
         @user = User.new
+        render json: @user
        end
    
         #ユーザーを作成するアクション
@@ -29,12 +32,15 @@ module Api
            else
              render 'new'
            end
+
+           render json: @user
          end
 
          #id=1のユーザーを編集するページ
          def edit
           #特定の一人を探す。
           @user = User.find(params[:id])
+          render json: @user
          end
 
          #ユーザーを更新するアクション
@@ -46,6 +52,7 @@ module Api
           else
             render 'edit'
          end
+         render json: @user
         end
 
 
@@ -55,8 +62,18 @@ module Api
           flash[:success] = "deleted!"
           redirect_to users_url
          end
-   
-   
+
+        def following
+          @title = "Following"
+          @user = User.find(params[:id])
+          @users = @user.following.paginate(page: params[:page])
+        end
+
+        def followers
+          @title = "Followers"
+          @user = User.find(params[:id])
+          @users = @user.following.paginate(page: params[:page])
+        end
    
          private
    
