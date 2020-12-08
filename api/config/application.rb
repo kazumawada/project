@@ -38,3 +38,22 @@ module App
      config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
+
+    #  <httpProtocol>
+    #  <customHeaders>
+    #  <add name="Access-Control-Allow-Origin" Value="*" />
+    #  <add name="Access-Control-Allow-Origin" Value="Content-Type" />
+    #  <add name="Access-Control-Allow-Origin" Value="GET, POST, PUT, DELETE, OPTIONS" />
+    #  </customHeaders>
+    #  </httpProtocol>
+
+
+# crossの許可。
+# config.middleware.insert_before 0, Rack::Cors do
+#   allow do
+#     origins "*"
+#     resource "*",
+#       headers: :any,
+#       methods: [:get, :post, :options, :head]
+#   end
+# end
