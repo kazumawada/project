@@ -39,6 +39,7 @@
         <v-btn><router-link to="/login">Login</router-link></v-btn>
          <v-btn><router-link to="/playground">playground</router-link></v-btn>
          <v-btn><router-link to="/smoothLogin">かんたんログイン</router-link></v-btn>
+         <v-btn><router-link to="/playGround02">playground02</router-link></v-btn>
          <!-- <v-btn><router-link to="/translator">Translator</router-link></v-btn> -->
         <v-spacer></v-spacer>
         <!-- レスポンシブ -->
