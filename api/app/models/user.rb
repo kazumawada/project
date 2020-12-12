@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+   #Auth0の実装
+   def self.from_token_payload(payload)
+    find_by(sub: payload['sub']) || create!(sub: payload['sub'])
+　　end
+
     has_many :active_relationships, class_name: "Relationship",
                  foreign_key: "follower_id",
                  #自分がフォローしているユーザーのDBにある自分のidも消える。
