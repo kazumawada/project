@@ -1,10 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import { authGuard } from "../auth/authGuard";
 
 Vue.use(VueRouter)
 
-const routes = [
+// const routes = [
+// ]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes:[
+    {
+      path: "/profile",
+      name: "profile",
+      beforeEnter: authGuard
+    },
+     {
+    path: '/smoothLogin',
+    name: 'SmoothLogin',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/SmoothLogin.vue')
+  },
   {
     path: '/',
     name: 'Home',
@@ -42,28 +62,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Post.vue')
   },
-  {
-    path: '/signup',
-    name: 'Signup',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
-  },
-  {
-    path: '/smoothLogin',
-    name: 'SmoothLogin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/SmoothLogin.vue')
-  },
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  ]
 })
 
 export default router

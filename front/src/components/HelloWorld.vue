@@ -40,6 +40,10 @@
          <v-btn><router-link to="/playground">playground</router-link></v-btn>
          <v-btn><router-link to="/smoothLogin">かんたんログイン</router-link></v-btn>
          <v-btn><router-link to="/playGround02">playground02</router-link></v-btn>
+          <!-- <v-btn><router-link to="/profile">Profile</router-link></v-btn> -->
+          <!-- もし認証されたら、このボタンが表示される -->
+          <v-btn><router-link v-if="$auth.isAuthenticated" to="/profile">auth0Profile</router-link></v-btn>
+
          <!-- <v-btn><router-link to="/translator">Translator</router-link></v-btn> -->
         <v-spacer></v-spacer>
         <!-- レスポンシブ -->
