@@ -15,7 +15,8 @@ const router = new VueRouter({
     {
       path: "/profile",
       name: "profile",
-      beforeEnter: authGuard
+      beforeEnter: authGuard,
+      component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue')
     },
      {
     path: '/smoothLogin',
