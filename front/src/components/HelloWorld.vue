@@ -182,7 +182,34 @@
         </v-row>
       </v-container>
     </v-main>
-  </v-app>
+  
+
+
+<!------------------------ footer -------------------------------->
+
+<v-bottom-navigation
+  :value="activeBtn"
+  color="primary lighten-1"
+  fixed
+>
+  <v-btn href="/">
+    <span>Home</span>
+    <v-icon>mdi-home</v-icon>
+  </v-btn>
+
+  <!-- <v-btn href="/tweet/index">
+    <span>Timeline</span>
+    <v-icon>mdi-timeline</v-icon>
+  </v-btn> -->
+</v-bottom-navigation>
+
+<!----------------------- footerここまで ----------------------------->
+
+</v-app>
+
+
+
+
 </template>
 
 <script>
