@@ -2,7 +2,7 @@
 <div id="post">
   <!-- <v-card> -->
     <v-container fluid>
-          <v-row>
+    <v-row>
       <v-col
         cols="10"
       >
