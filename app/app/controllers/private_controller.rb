@@ -1,5 +1,5 @@
 #Auth0が機能しているか確認するためのcontroller.
-class PrivateController < ActionController::API
+class PrivateController < ActionController::Base
     include Secured
     def private
       render json: { message: 'Hello from a private endpoint! You need to be authenticated to see this.', user: current_user.id}

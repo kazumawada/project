@@ -1,24 +1,20 @@
-module Api
-    module V1
+
      class UsersController < ApplicationController
        #全てのユーザーを表示する。
        def index
          @users = User.all
-         render json: @users
        end
 
        #特定のユーザーを表示する
        def show
         @user = User.find(params[:id]) 
         @posts = @user.posts.paginate(page: params[:page])
-        render json: @user
-        render json: @posts
        end
 
        # ユーザーを新規作成するページ
        def new
         @user = User.new
-        render json: @user
+        
        end
    
         #ユーザーを作成するアクション
@@ -33,14 +29,14 @@ module Api
              render 'new'
            end
 
-           render json: @user
+           
          end
 
          #id=1のユーザーを編集するページ
          def edit
           #特定の一人を探す。
           @user = User.find(params[:id])
-          render json: @user
+      
          end
 
          #ユーザーを更新するアクション
@@ -52,7 +48,7 @@ module Api
           else
             render 'edit'
          end
-         render json: @user
+        
         end
 
 
@@ -93,5 +89,4 @@ module Api
    
    end
    
-   end
-   end
+  
