@@ -1,2 +1,1 @@
-![cloud-architect](https://user-images.githubusercontent.com/57794648/110570706-b5805d00-8199-11eb-8b0a-7ab498730547.png)
-# project
+![g](https://user-images.githubusercontent.com/57794648/110572381-9c2ce000-819c-11eb-8662-36c72066c9b2.png)
